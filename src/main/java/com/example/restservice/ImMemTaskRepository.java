@@ -10,13 +10,7 @@ import java.util.UUID;
 @Repository
 public class ImMemTaskRepository implements TaskRepository {
 
-    private final List<Task> tasks = new LinkedList<>(){
-        {
-        this.add(new Task("arajin ashxatanq"));
-        this.add(new Task("erkrord ashxatanq"));
-    }
-
-    };
+    private final List<Task> tasks = new LinkedList<>();
     @Override
     public List<Task> findAll() {
         return this.tasks;
@@ -34,4 +28,7 @@ public class ImMemTaskRepository implements TaskRepository {
                 .findFirst();
     }
 
+    public List<Task> getTasks() {
+        return tasks;
+    }
 }
